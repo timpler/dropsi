@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "noImplicitAny": true,
+    "lib": ["es2015", "dom"],
+    "sourceMap": true,
+    "jsx": "react",
+    "outDir": "dist",
+    "baseUrl": "./src",
+    "types": ["react", "styled-components", "react-dom"],
+    "paths": {
+      "~app/*": ["./*"]
+    }
+  },
+  "exclude": ["node_modules"],
+  "include": ["src/**/*", "src/**/*"]
+}

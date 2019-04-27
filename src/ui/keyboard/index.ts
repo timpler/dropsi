@@ -1,0 +1,1 @@
+export { ShortcutIndicator } from './ShortcutIndicator';
