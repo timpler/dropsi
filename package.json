@@ -1,24 +1,19 @@
 {
-  "name": "electron-quick-start-typescript",
+  "name": "Dropsi",
   "version": "1.0.0",
   "description": "A minimal Electron application written with Typescript",
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
     "lint": "tslint -c tslint.json -p tsconfig.json",
-    "open": "ELECTRON_ENABLE_LOGGING=1 && electron ./dist/main/index.js",
+    "open": "ELECTRON_ENABLE_LOGGING=1 && electron ./lib/main/index.js",
     "start": "npm run build && npm run open",
     "dev": "concurrently --kill-others \"yarn run watch\" \"yarn run start\"",
-    "dist": "electron-builder"
+    "dist": "electron-builder",
+    "sign": "electron-osx-sign ./dist/mas/Dropsi.app"
   },
-  "repository": "https://github.com/electron/electron-quick-start-typescript",
   "keywords": [
-    "Electron",
-    "quick",
-    "start",
-    "tutorial",
-    "demo",
-    "typescript"
+    "dropsi"
   ],
   "author": "GitHub",
   "license": "CC0-1.0",
@@ -36,6 +31,7 @@
     "concurrently": "^4.1.0",
     "electron": "^4.0.6",
     "electron-builder": "^20.39.0",
+    "electron-osx-sign": "^0.4.11",
     "tslint": "^5.10.0",
     "typescript": "^3.3.3333"
   },
@@ -56,13 +52,14 @@
     "tsconfig-paths": "^3.8.0"
   },
   "_moduleAliases": {
-    "~app": "dist",
+    "~app": "lib",
     "~assets": "assets"
   },
+  "main": "./lib/main/index.js",
   "build": {
     "appId": "com.timpler.dropsi",
     "mac": {
-      "category": "public.app-category.utilities",
+      "category": "public.app-category.productivity",
       "target": [
         "pkg",
         "dmg",
@@ -76,18 +73,8 @@
     "mas": {
       "entitlements": "build/entitlements.mas.plist",
       "type": "distribution",
-      "category": "public.app-category.utilities",
+      "category": "public.app-category.productivity",
       "icon": "build/icon.icns"
-    },
-    "files": [
-      "main.js",
-      "node_modules/**/*",
-      "index.html",
-      "menu.html",
-      "assets/**/*",
-      "dist/**/*",
-      "package.json",
-      "embedded.provisionprofile"
-    ]
+    }
   }
 }

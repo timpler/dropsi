@@ -23,7 +23,7 @@ function close() {
 
 function handleCloseRequests() {
   getWindow().on('blur', () => {
-    // close();
+    close();
   });
 
   return closeWindowChannel.subscribe(() => {

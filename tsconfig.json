@@ -4,16 +4,30 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "noImplicitAny": true,
-    "lib": ["es2015", "dom"],
+    "lib": [
+      "es2015",
+      "dom"
+    ],
     "sourceMap": true,
     "jsx": "react",
-    "outDir": "dist",
+    "outDir": "lib",
     "baseUrl": "./src",
-    "types": ["react", "styled-components", "react-dom"],
+    "types": [
+      "react",
+      "styled-components",
+      "react-dom"
+    ],
     "paths": {
-      "~app/*": ["./*"]
+      "~app/*": [
+        "./*"
+      ]
     }
   },
-  "exclude": ["node_modules"],
-  "include": ["src/**/*", "src/**/*"]
+  "exclude": [
+    "node_modules"
+  ],
+  "include": [
+    "src/**/*",
+    "src/**/*"
+  ]
 }

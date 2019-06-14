@@ -2,14 +2,14 @@
 // be executed in the renderer process for that window.
 // All of the Node.js APIs are available in this process.
 import React from 'react';
-import * as tsPaths from 'tsconfig-paths';
-import 'module-alias/register';
 
-tsPaths.register({
-  baseUrl: '..',
-  paths: {
-    '~app/*': ['./*'],
-  },
+import * as path from 'path';
+const moduleAlias = require('module-alias');
+
+const root = path.resolve(__dirname, '..');
+
+moduleAlias.addAliases({
+  '~app': root,
 });
 
 import { render } from 'react-dom';
